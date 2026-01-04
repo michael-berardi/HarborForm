@@ -18,6 +18,7 @@ import {
     Dices,
     Info,
     ExternalLink,
+    ChevronRight,
     ChevronDown,
     Layout,
     Layers,
