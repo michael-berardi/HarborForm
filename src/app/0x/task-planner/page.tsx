@@ -436,7 +436,10 @@ export default function TaskPlanner() {
                                                             <AlertTriangle className="w-4 h-4" />
                                                         </button>
                                                         <button
-                                                            onClick={() => DataStore.deleteTask(task.id) || setTasks(DataStore.getTasks())}
+                                                            onClick={() => {
+                                                                DataStore.deleteTask(task.id);
+                                                                setTasks(DataStore.getTasks());
+                                                            }}
                                                             className="p-2 rounded-xl bg-[var(--bg-primary)] border border-[var(--border-subtle)] hover:border-rose-500/50 text-[var(--text-muted)] hover:text-rose-500 transition-all shadow-sm"
                                                             title="Delete Task"
                                                         >
