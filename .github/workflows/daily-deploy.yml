@@ -1,0 +1,19 @@
+name: Daily Deploy
+
+on:
+  schedule:
+    # 4am EST = 9am UTC (during EST/winter)
+    # Note: GitHub Actions uses UTC. Adjust for DST if needed.
+    - cron: '0 9 * * *'
+  
+  # Allow manual trigger for testing
+  workflow_dispatch:
+
+jobs:
+  trigger-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Vercel Deploy Hook
+        run: |
+          curl -X POST "${{ secrets.VERCEL_DEPLOY_HOOK }}"
+          echo "Deploy triggered at $(date)"
