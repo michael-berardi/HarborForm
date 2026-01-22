@@ -1,10 +1,10 @@
 name: Daily Deploy
 
 on:
-  schedule:
-    # 4am EST = 9am UTC (during EST/winter)
-    # Note: GitHub Actions uses UTC. Adjust for DST if needed.
-    - cron: '0 9 * * *'
+  # schedule:
+  #   # 4am EST = 9am UTC (during EST/winter)
+  #   # Note: GitHub Actions uses UTC. Adjust for DST if needed.
+  #   - cron: '0 9 * * *'
   
   # Allow manual trigger for testing
   workflow_dispatch:
